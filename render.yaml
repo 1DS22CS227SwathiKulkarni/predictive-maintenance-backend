@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: foresight-backend
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn mysite.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: mysite.settings
+      - key: PYTHON_VERSION
+        value: 3.10
