@@ -3,7 +3,7 @@ services:
     name: predictive-maintenance
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn mysite.wsgi:application"
+    startCommand: "gunicorn fbackend.mysite.wsgi:application"
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: mysite.settings
