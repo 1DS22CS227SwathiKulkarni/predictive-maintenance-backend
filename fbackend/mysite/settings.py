@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-hchh6$4&c_mx%py7eu&-m(6z-04n*-)()$aag10pximmze%l^z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://foresight-iqx1.onrender.com','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['https://predictive-maintenance-01qp.onrender.com','https://foresight-iqx1.onrender.com','127.0.0.1','localhost']
 
 
 # Application definition
