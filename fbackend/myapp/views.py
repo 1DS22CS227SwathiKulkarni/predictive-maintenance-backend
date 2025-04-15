@@ -24,7 +24,6 @@ dataset_file = os.path.join(BASE_DIR, 'myapp', 'utils', 'predictive_maintenance.
 with open(dataset_file, "rb") as f:
     dataset = pd.read_csv(f)
 
-
 @csrf_exempt 
 @api_view(["POST"])  
 def predictFailure(request):
