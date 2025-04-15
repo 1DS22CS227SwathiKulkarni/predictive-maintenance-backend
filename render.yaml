@@ -2,10 +2,16 @@ services:
   - type: web
     name: foresight-backend
     env: python
-    buildCommand: ""
+    buildCommand: pip install -r requirements.txt
     startCommand: gunicorn mysite.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: mysite.settings
       - key: PYTHON_VERSION
         value: 3.10
+      - key: SECRET_KEY
+        value: <your_secret_key>  # Set this in Render Dashboard for security
+      - key: DEBUG
+        value: False
+      - key: DATABASE_URL
+        value: <your_render_postgres_url>  # Also best set via Dashboard
