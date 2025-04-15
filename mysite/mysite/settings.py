@@ -23,12 +23,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-hchh6$4&c_mx%py7eu&-m(6z-04n*-)()$aag10pximmze%l^z'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+SECRET_KEY = os.environ.get('SECRET_KEY', 'your-local-dev-secret-key')
 
-ALLOWED_HOSTS = [,'https://foresight-iqx1.onrender.com']
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+
+
+
+ALLOWED_HOSTS = ['foresight-iqx1.onrender.com', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
@@ -83,15 +88,13 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'predictive_maintenance', 
-        'USER': 'postgres',                
-        'PASSWORD': 'Hanuman123',       
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+        default='sqlite:///db.sqlite3',
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
+
 
 
 
@@ -145,5 +148,4 @@ CORS_ALLOWED_ORIGINS = [
     'https://foresight-iqx1.onrender.com',  
 ]
 
-DATABASES['default'] = dj_database_url.config(default='sqlite:///db.sqlite3')
-
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
