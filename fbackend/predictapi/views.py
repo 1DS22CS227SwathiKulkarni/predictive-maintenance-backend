@@ -4,7 +4,7 @@ from myapp.models import Prediction
 from .serializers import PredictionSerializer
 
 # GET (list) and POST (create)
-class PredictAPIView(generics.ListCreateAPIView): 
+class PredictAPIView(generics.ListCreateAPIView):  
     queryset = Prediction.objects.all()
     serializer_class = PredictionSerializer
 
