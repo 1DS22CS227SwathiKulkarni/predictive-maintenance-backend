@@ -145,5 +145,9 @@ CORS_ALLOWED_ORIGINS = [
     'https://foresight-iqx1.onrender.com',  
 ]
 
-DATABASES['default'] = dj_database_url.config(default='sqlite:///db.sqlite3')
+# DATABASES['default'] = dj_database_url.config(default='sqlite:///db.sqlite3')
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=600)
+}
+
 
