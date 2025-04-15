@@ -10,8 +10,8 @@ services:
       - key: PYTHON_VERSION
         value: 3.10
       - key: SECRET_KEY
-        value: <your_secret_key>  # Set this in Render Dashboard for security
+        value: <your_secret_key>  
       - key: DEBUG
         value: False
       - key: DATABASE_URL
-        value: <your_render_postgres_url>  # Also best set via Dashboard
+        value: <your_render_postgres_url>  
