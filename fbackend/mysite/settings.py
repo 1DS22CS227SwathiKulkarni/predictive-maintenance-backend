@@ -143,6 +143,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',  
     'http://localhost:8000',  
     'https://foresight-iqx1.onrender.com',  
+    'https://predictive-maintenance-01qp.onrender.com',
 ]
 
 # DATABASES['default'] = dj_database_url.config(default='sqlite:///db.sqlite3')
